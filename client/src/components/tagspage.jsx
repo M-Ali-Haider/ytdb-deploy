@@ -11,7 +11,7 @@ const TagsPage=({resetSidebar})=>{
     useEffect(() => {
         const fetchVideosFromTags = async () => {
             try {
-                const res = await axios.get(`/api/videos/tags/${path}`);
+                const res = await axios.get(`https://ytdb-deploy.vercel.app/api/videos/tags/${path}`);
                 setVideos(res.data)
             } catch (error) {console.log("Error tagspage")}
         };

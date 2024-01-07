@@ -33,11 +33,11 @@ const Channel = ({isSidebarOpen,resetSidebar})=>{
     useEffect(()=>{
         const fetchData = async ()=>{
             try {
-                const res = await axios.get(`/api/users/find/${path}`)
+                const res = await axios.get(`https://ytdb-deploy.vercel.app/api/users/find/${path}`)
                 setUser(res.data)
-                const rese = await axios.get(`/api/videos/count/${path}`)
+                const rese = await axios.get(`https://ytdb-deploy.vercel.app/api/videos/count/${path}`)
                 setTotalVideos(rese.data)
-                const videos = await axios.get(`/api/videos/getvideo/${path}`)
+                const videos = await axios.get(`https://ytdb-deploy.vercel.app/api/videos/getvideo/${path}`)
                 setVideos(videos.data)
             } catch (err) {console.log("Error in channel.jsx while fetching user")}
         }

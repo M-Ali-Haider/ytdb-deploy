@@ -7,7 +7,7 @@ export function Recommendation({tags,resetSidebar}) {
   const [videos,setVideos]=useState([])
   useEffect(()=>{
     const fetchVideos = async ()=>{
-      const res = await axios.get(`/api/videos/rv/tags?tags=${tags}`)
+      const res = await axios.get(`https://ytdb-deploy.vercel.app/api/videos/rv/tags?tags=${tags}`)
       setVideos(res.data)
     }
     fetchVideos()

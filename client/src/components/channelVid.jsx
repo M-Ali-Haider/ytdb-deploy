@@ -21,7 +21,7 @@ const ChannelVideo=({resetSidebar,video})=>{
     console.log('path: '+path)
     useEffect(()=>{
         const fetchChannel = async ()=>{
-            const res = await axios.get(`/api/users/find/${video.userId}`)
+            const res = await axios.get(`https://ytdb-deploy.vercel.app/api/users/find/${video.userId}`)
             setChannel(res.data)
         }
         fetchChannel()
@@ -37,7 +37,7 @@ const ChannelVideo=({resetSidebar,video})=>{
 
     const handleDelete = async () => {
         try {
-          await axios.delete(`/api/videos/${video._id}`);
+          await axios.delete(`https://ytdb-deploy.vercel.app/api/videos/${video._id}`);
         } catch (error) {console.error('Error deleting video:', error);}
     };
     return(

@@ -11,7 +11,7 @@ const Playlist=()=>{
         useEffect(()=>{
             const fetchMix= async()=>{
                 try{
-                    const res= await axios.get(`/api/videos/cv/${currentUser._id}`)
+                    const res= await axios.get(`https://ytdb-deploy.vercel.app/api/videos/cv/${currentUser._id}`)
                     setVideos(res.data);
                 }
                 catch(err){console.log("Error in fetching Mix")}

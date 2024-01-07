@@ -27,8 +27,8 @@ const VideoPage=({isSidebarOpen,resetSidebar})=>{
     useEffect(() => {
         const fetchData = async () => {
         try {
-            const videoRes = await axios.get(`/api/videos/find/${path}`);
-            const channelRes = await axios.get(`/api/users/find/${videoRes.data.userId}`);
+            const videoRes = await axios.get(`https://ytdb-deploy.vercel.app/api/videos/find/${path}`);
+            const channelRes = await axios.get(`https://ytdb-deploy.vercel.app/api/users/find/${videoRes.data.userId}`);
             setChannel(channelRes.data);
             setVideo(videoRes.data);
             dispatch(fetchSuccess(videoRes.data));
@@ -40,7 +40,7 @@ const VideoPage=({isSidebarOpen,resetSidebar})=>{
     
     useEffect(()=>{
         const handleView = async ()=>{
-        await axios.put(`/api/videos/view/${currentVideo._id}`)
+        await axios.put(`https://ytdb-deploy.vercel.app/api/videos/view/${currentVideo._id}`)
         dispatch(incrementView());
     }
         handleView();

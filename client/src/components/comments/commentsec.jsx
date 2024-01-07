@@ -17,7 +17,7 @@ const CommentSection=({videoId})=>{
     useEffect(()=>{
         const fetchComments = async ()=>{
             try {
-                const res = await axios.get(`/api/comments/${videoId}`)
+                const res = await axios.get(`https://ytdb-deploy.vercel.app/api/comments/${videoId}`)
                 setComments(res.data)
             } catch (err) {}
         }
@@ -25,8 +25,8 @@ const CommentSection=({videoId})=>{
     },[videoId])
     const handleCommentSubmit = async (newComment) => {
         try {
-          await axios.post('/api/comments', { ...newComment, videoId });
-          const res = await axios.get(`/api/comments/${videoId}`);
+          await axios.post('https://ytdb-deploy.vercel.app/api/comments', { ...newComment, videoId });
+          const res = await axios.get(`https://ytdb-deploy.vercel.app/api/comments/${videoId}`);
           setComments(res.data);
         } catch (err) {
           console.error('Error posting comment:', err);

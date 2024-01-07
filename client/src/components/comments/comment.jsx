@@ -8,7 +8,7 @@ const Comment=({comment})=>{
     const [channel,setChannel]=useState([])
     useEffect(()=>{
         const fetchComment = async ()=>{
-            const res = await axios.get(`/api/users/find/${comment.userId}`)
+            const res = await axios.get(`https://ytdb-deploy.vercel.app/api/users/find/${comment.userId}`)
             setChannel(res.data)
         }
         fetchComment();

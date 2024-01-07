@@ -12,7 +12,7 @@ const RV=({video,resetSidebar})=>{
     const [channel,setChannel]=useState({});
     useEffect(()=>{
         const fetchChannel = async ()=>{
-            const res = await axios.get(`/api/users/find/${video.userId}`)
+            const res = await axios.get(`https://ytdb-deploy.vercel.app/api/users/find/${video.userId}`)
             setChannel(res.data)
         }
         fetchChannel()

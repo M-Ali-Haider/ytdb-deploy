@@ -8,7 +8,7 @@ const Search =({resetSidebar})=>{
     const query = useLocation().search 
     useEffect(()=>{
         const fetchVideos = async ()=>{
-            const res = await axios.get(`/api/videos/search${query}`)
+            const res = await axios.get(`https://ytdb-deploy.vercel.app/api/videos/search${query}`)
             setVdeos(res.data)
         }
         fetchVideos()

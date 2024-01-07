@@ -70,7 +70,7 @@ const Upload=({closeUpload})=>{
 
     const handleUpload = async (e)=>{
         e.preventDefault();
-        const res = await axios.post("/api/videos", {...inputs, tags})
+        const res = await axios.post("https://ytdb-deploy.vercel.app/api/videos", {...inputs, tags})
         closeUpload();
         res.status===200 && navigate(`/video/${res.data._id}`)
     }

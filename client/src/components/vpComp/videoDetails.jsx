@@ -25,19 +25,19 @@ const VideoDetails=({channel})=>{
 
 
     const handleLike = async ()=>{
-        await axios.put(`/api/users/like/${currentVideo._id}`)
+        await axios.put(`https://ytdb-deploy.vercel.app/api/users/like/${currentVideo._id}`)
         dispatch(like(currentUser._id))
     }
     const handleDislike = async ()=>{
-        await axios.put(`/api/users/dislike/${currentVideo._id}`)
+        await axios.put(`https://ytdb-deploy.vercel.app/api/users/dislike/${currentVideo._id}`)
         dispatch(dislike(currentUser._id))
     }
 
     const handleSub= async()=>{
         if(currentUser){
             currentUser.subscribedUsers.includes(channel._id)?
-            await axios.put(`/api/users/unsub/${channel._id}`):
-            await axios.put(`/api/users/sub/${channel._id}`)
+            await axios.put(`https://ytdb-deploy.vercel.app/api/users/unsub/${channel._id}`):
+            await axios.put(`https://ytdb-deploy.vercel.app/api/users/sub/${channel._id}`)
             dispatch(subscription(channel._id))
         }
     }
@@ -45,8 +45,8 @@ const VideoDetails=({channel})=>{
     const handleWatchLater= async()=>{
         if(currentUser){
             currentUser.watchLater.includes(currentVideo._id)?
-            await axios.put(`/api/users/watchlater/remove/${currentVideo._id}`):
-            await axios.put(`/api/users/watchlater/add/${currentVideo._id}`)
+            await axios.put(`https://ytdb-deploy.vercel.app/api/users/watchlater/remove/${currentVideo._id}`):
+            await axios.put(`https://ytdb-deploy.vercel.app/api/users/watchlater/add/${currentVideo._id}`)
             dispatch(watchlater(currentVideo._id));
         }
     }

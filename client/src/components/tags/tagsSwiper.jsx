@@ -16,7 +16,7 @@ const TagsSwiper=({tagsNumber})=>{
     useEffect(() => {
         const fetchTags = async () => {
         try {
-            const response = await axios.get('/api/videos/tags');
+            const response = await axios.get('https://ytdb-deploy.vercel.app/api/videos/tags');
             const data = response.data;
             setTags(['All', ...data]);
         } catch (error) {
