@@ -13,7 +13,7 @@ dotenv.config();
 
 const connect = () => {
   mongoose
-    .connect(process.env.MONGO)
+    .connect("mongodb://bruhmius:bruhmius@ac-k2vhywb-shard-00-00.ekihjjo.mongodb.net:27017,ac-k2vhywb-shard-00-01.ekihjjo.mongodb.net:27017,ac-k2vhywb-shard-00-02.ekihjjo.mongodb.net:27017/?ssl=true&replicaSet=atlas-105bsh-shard-0&authSource=admin&retryWrites=true&w=majority")
     .then(() => {
       console.log("Connected to DB");
     })
