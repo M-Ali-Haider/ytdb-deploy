@@ -15,7 +15,7 @@ const app = express();
 dotenv.config();
 
 const corsOptions = {
-    origin: "https://m-ali-haider.github.io/YoutubeDBClient/",
+    origin: "https://m-ali-haider.github.io",
     credentials: true, 
   };
 
