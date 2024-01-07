@@ -32,8 +32,7 @@ mongoose.connect(process.env.MONGO)
         console.log("MongoDB Connected!")
         server.listen(port,()=>{
             console.log(`Server is listening on port ${port} `)
-        })
+        })})
         .catch((err)=>{
-            console.log({err});
-        })
-    })
+          console.log({err});
+      })
