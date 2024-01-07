@@ -11,7 +11,7 @@ const Grid = ({ tagsPage, searchPage, signPage, type, isSidebarOpen, resetSideba
   const [videos, setVideos] = useState([]);
   useEffect(() => {
     const fetchVideos = async () => {
-      const res = await axios.get(`/api/videos/${type}`);
+      const res = await axios.get(`https://ytdb-deploy.vercel.app//videos/${type}`);
       setVideos(res.data);
     };
     fetchVideos();
