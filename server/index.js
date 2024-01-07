@@ -14,7 +14,12 @@ import authRoutes from "./routes/auth.js";
 const app = express();
 dotenv.config();
 
-app.use(cors())
+const corsOptions = {
+    origin: "https://ytdb-deploy-frontend.vercel.app",
+    credentials: true, 
+  };
+
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
 
