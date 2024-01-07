@@ -3,8 +3,11 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   server:{
-    proxy:{
-      '/api':'https://ytdb-deploy.vercel.app/api/'
+    proxy: {
+      '/api': {
+        target: 'https://ytdb-deploy.vercel.app/api/',
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
     },
   },
   plugins: [react()],
