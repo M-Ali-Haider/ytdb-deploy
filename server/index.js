@@ -24,7 +24,10 @@ const connect = () => {
 
 
 //middlewares
-app.use(cors())
+app.use(cors({
+  origin: "https://ytdb-deploy-api.vercel.app",
+  credentials: true,
+}));
 app.use(cookieParser())
 app.use(express.json());
 app.use("/api/auth", authRoutes);
