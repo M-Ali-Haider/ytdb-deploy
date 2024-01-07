@@ -1,0 +1,179 @@
+header{
+    position: fixed;
+    height: 65px;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    z-index: 100;
+}
+.header-helper{
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 120px;
+}
+.logo svg{
+    width: 90px;
+    height: 40px;
+}
+.logo img{
+    width: 90px;
+    height: 40px;
+}
+.c-icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.c-icon img{
+    width: 24px;
+    height: 24px;
+}
+.hi{
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.hi:hover{
+    background-color: #e9e9e9;
+}
+.hi:active{
+    background-color: #ccc;
+}
+.mobile-search{
+    display: none;
+}
+.yt-searchbar{
+    width: 90%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.yt-input-div{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.yt-input{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.1);
+    border-radius: 25px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding-left:15px;
+    font-size: 16px;
+    z-index: 3;
+}
+.yt-input:focus{
+    height: calc(100% - 1.5px);
+    outline:0.5px solid #3ea6ff;
+}
+.search-abs{
+    position: absolute;
+    left: 12px;
+    z-index: 4;
+    width: 19px;
+    height: 19px;
+}
+.input-focused{
+    width: calc(70% + 30px);
+}
+
+.input-padded{
+    padding-left: 45px;
+}
+
+.display-none{
+    display: none;
+}
+.search{
+    width: 64px;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mic{
+    background-color: #e0e0e0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.mic:hover{
+    background-color: #ccc;
+}
+.mic:active{
+    background-color: #aaa;
+}
+.c-pfp{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 5px;
+    position: relative;
+}
+.c-pfp img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+}
+.header-first{
+    width: 169px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-second{
+    width: 52%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 15px;
+}
+.header-third{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 8px;
+}
+
+.pointer-events-none{
+    pointer-events: none;
+}

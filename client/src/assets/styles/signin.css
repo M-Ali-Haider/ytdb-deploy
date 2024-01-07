@@ -1,0 +1,64 @@
+.signinButton{
+    min-width: 96px;
+    max-width: 96px;
+    height: 36px;
+    padding: 0px 5px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid #ececec;
+    color: #175fd8;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.signinButton:hover{
+    background-color: #def1ff;
+}
+.signinButton svg{
+    fill: #175fd8;
+}
+.signinButton img{
+    width: 24px;
+    height: 24px;
+    color: #175fd8;
+}
+.sign-in-button-helper{
+    width: 52.5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.signuppage{
+   
+    padding: 50px 0px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sign-in-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid black;
+    padding: 50px;
+    border-radius: 15px;
+}
+.sign-in-container input{
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ececec;
+}
+
+.sign-in-container button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
