@@ -11,9 +11,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <HashRouter>
+        <Router>
           <App />
-        </HashRouter>
+        </Router>
       </PersistGate>
     </Provider>
   
