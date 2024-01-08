@@ -15,7 +15,7 @@ const app = express();
 dotenv.config();
 
 const corsOptions = {
-    origin: "https://m-ali-haider.github.io",
+    origin: "https://ytdb-deploy-frontend.vercel.app/",
     credentials: true, 
   };
 
