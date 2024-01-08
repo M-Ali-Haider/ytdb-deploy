@@ -41,7 +41,7 @@ function App() {
         handleSidebar={handleSidebar}
       />
       <Routes>
-        <Route path='ytdb-deploy-frontend.vercel.app/' element={<Homepage subout={false} tagsPage={false} channelPage={false}  searchPage={false} signPage={false} type="random" isSidebarOpen={isSidebarOpen} resetSidebar={resetSidebar}/>}/>
+        <Route path='/' element={<Homepage subout={false} tagsPage={false} channelPage={false}  searchPage={false} signPage={false} type="random" isSidebarOpen={isSidebarOpen} resetSidebar={resetSidebar}/>}/>
         <Route path='/trends' element={<Homepage subout={false} tagsPage={false} channelPage={false} searchPage={false} signPage={false} type="trend" isSidebarOpen={isSidebarOpen} resetSidebar={resetSidebar}/>}/>
         <Route path='/subscriptions' element={<Homepage subout={false} tagsPage={false} channelPage={false} searchPage={false} signPage={false} type="sub" isSidebarOpen={isSidebarOpen} resetSidebar={resetSidebar}/>}/>
         <Route path='/watchlater' element={<Homepage subout={false} tagsPage={false} channelPage={false} searchPage={false} signPage={false} type="watch" isSidebarOpen={isSidebarOpen} resetSidebar={resetSidebar}/>}/>
