@@ -4,14 +4,16 @@ import shorts from '../assets/images/shorts.svg'
 import subs from '../assets/images/subs.svg'
 import you from '../assets/images/you.svg'
 import browse from '../assets/images/browse.svg'
+import { Link } from 'react-router-dom';
 const Footer=()=>{
+    const {currentUser} = useSelector(state=>state.user)
     return(
         <>
         <footer>
-            <div className="footer-unit">
+            <Link to={`/`} className="footer-unit">
                 <img src={home} alt="" />
                 <span>Home</span>
-            </div>
+            </Link>
             <div className="footer-unit">
                 <img src={shorts} alt="" />
                 <span>Shorts</span>
@@ -19,14 +21,14 @@ const Footer=()=>{
             <div className="footer-unit ">
                 <img className='browse-footer' src={browse} alt="" />
             </div>
-            <div className="footer-unit">
+            <Link to={currentUser?`/subscriptions`:'/subout'} className="footer-unit">
                 <img src={subs} alt="" />
                 <span>Subscriptions</span>
-            </div>
-            <div className="footer-unit">
+            </Link>
+            <Link to={currentUser?`/channel/${currentUser._id}`:'/channel'} className="footer-unit">
                 <img src={you} alt="" />
                 <span>Library</span>
-            </div>
+            </Link>
         </footer>
         </>
     )

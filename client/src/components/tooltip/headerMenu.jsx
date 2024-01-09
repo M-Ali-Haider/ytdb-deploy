@@ -6,10 +6,11 @@ import { logout } from '../../redux/userSlice'
 import pfp from "../../assets/images/pfp.webp"
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 
 const HeaderMenu = ({currentUser,closeHM})=>{
 
+    const {currentUser} = useSelector(state=>state.user)
     const navigate=useNavigate();
 
     const imgSrc = currentUser.img || pfp;
@@ -46,7 +47,7 @@ const HeaderMenu = ({currentUser,closeHM})=>{
                 <div className="headerMenu-user">
                     <div className="headerMenu-username">{currentUser.name}</div>
                     <div className="headerMenu-email">{currentUser.email}</div>
-                    <div className="headerMenu-viewChannel">View your channel</div>
+                    <Link to={`/channel/${currentUser._id}`} className="headerMenu-viewChannel">View your channel</Link>
                 </div>
             </div>
 
