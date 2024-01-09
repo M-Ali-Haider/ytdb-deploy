@@ -31,7 +31,7 @@ export const signin = async (req, res, next) => {
     console.log(token);
     const {password, ...others} = user._doc;
 
-    res.cookie("access_token",token,{
+    res.cookie("access",token,{
         httpOnly:true,
         sameSite: 'None', // Adjust as needed based on your requirements
         secure: true,    
@@ -51,7 +51,7 @@ export const googleAuth = async(req,res,next)=>{
       const token = jwt.sign({id:user._id},process.env.JWT)
       console.log(token);
       res
-      .cookie("access_token",token,{
+      .cookie("access",token,{
         httpOnly:true,
         sameSite: 'None', // Adjust as needed based on your requirements
         secure: true,  
@@ -69,7 +69,7 @@ export const googleAuth = async(req,res,next)=>{
       const token = jwt.sign({id:savedUser._id},process.env.JWT)
       console.log(token);
       res
-      .cookie("access_token",token,{
+      .cookie("access",token,{
         httpOnly:true,
         sameSite: 'None', // Adjust as needed based on your requirements
         secure: true,  
