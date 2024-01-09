@@ -19,7 +19,7 @@ const SignPage=()=>{
         e.preventDefault();
         dispatch(loginStart())
         try {
-            const res = await axios.post("https://ytdb-deploy.vercel.app/api/auth/signin/",{name,password})
+            const res = await axios.post("/api/auth/signin/",{name,password})
             dispatch(loginSuccess(res.data))
             navigate('/')
         } catch (err) {
@@ -31,7 +31,7 @@ const SignPage=()=>{
         e.preventDefault();
         dispatch(loginStart());
         try {
-          const res = await axios.post("https://ytdb-deploy.vercel.app/api/auth/signup/", { name, email, password });
+          const res = await axios.post("/api/auth/signup/", { name, email, password });
           console.log(res.data)
           dispatch(loginSuccess(res.data));
           navigate('/');
@@ -44,7 +44,7 @@ const SignPage=()=>{
         dispatch(loginStart())
         signInWithPopup(auth,provider)
             .then((result)=>{
-                axios.post("https://ytdb-deploy.vercel.app/api/auth/google",{
+                axios.post("/api/auth/google",{
                     name:result.user.displayName,
                     email:result.user.email,
                     img:result.user.photoURL,
