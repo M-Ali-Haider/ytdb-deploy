@@ -18,7 +18,7 @@ router.get("/yourvids",verifyToken, yourvids)
 router.get("/watch",verifyToken, watch)
 router.get("/rv/tags", getByRVTag)
 router.get("/search", getBySearch)
-router.get("/getvideo/:userId", getUserVideos);
+router.get("/getvideo/:userId", verifyToken,getUserVideos);
 router.get('/count/:userId', getVideoCountByUser);
 
 router.get("/tags", getTags);
