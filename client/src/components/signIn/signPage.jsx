@@ -19,7 +19,7 @@ const SignPage=()=>{
         e.preventDefault();
         dispatch(loginStart())
         try {
-            const res = await axios.post("https://ytdb-deploy.vercel.app/api/auth/signin/",{name,password})
+            const res = await axios.post("https://ytdb-deploy.vercel.app/api/auth/signin/",{name,password},{ withCredentials: true })
             dispatch(loginSuccess(res.data))
             navigate('/')
         } catch (err) {
@@ -31,7 +31,7 @@ const SignPage=()=>{
         e.preventDefault();
         dispatch(loginStart());
         try {
-          const res = await axios.post("https://ytdb-deploy.vercel.app/api/auth/signup/", { name, email, password });
+          const res = await axios.post("https://ytdb-deploy.vercel.app/api/auth/signup/", { name, email, password },{ withCredentials: true });
           console.log(res.data)
           dispatch(loginSuccess(res.data));
           navigate('/');
@@ -48,7 +48,7 @@ const SignPage=()=>{
                     name:result.user.displayName,
                     email:result.user.email,
                     img:result.user.photoURL,
-                }).then((res)=>{
+                },{ withCredentials: true }).then((res)=>{
                     dispatch(loginSuccess(res.data))
                 })
                 navigate('/')
