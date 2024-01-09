@@ -32,7 +32,10 @@ export const signin = async (req, res, next) => {
     const {password, ...others} = user._doc;
 
     res.cookie("access_token",token,{
-        httpOnly:true
+        httpOnly:true,
+        sameSite: 'None', // Adjust as needed based on your requirements
+        secure: true,    
+        path:'/'
     }
     ).status(200).json(others)
 
@@ -50,6 +53,9 @@ export const googleAuth = async(req,res,next)=>{
       res
       .cookie("access_token",token,{
         httpOnly:true,
+        sameSite: 'None', // Adjust as needed based on your requirements
+        secure: true,  
+        path:'/'  
       })
       .status(200)
       .json(user._doc)
