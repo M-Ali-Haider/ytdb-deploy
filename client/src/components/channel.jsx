@@ -7,7 +7,6 @@ import SignInButton from './signIn/signInButton'
 import { useSelector } from 'react-redux'
 import '../assets/styles/channel.css'
 const Channel = ({isSidebarOpen,resetSidebar})=>{
-    console.log('Sidebar Status: '+isSidebarOpen)
 
     const { currentUser } = useSelector((state) => state.user);
 
@@ -39,7 +38,7 @@ const Channel = ({isSidebarOpen,resetSidebar})=>{
                 setTotalVideos(rese.data)
                 const videos = await axios.get(`https://ytdb-deploy.vercel.app/api/videos/getvideo/${path}`)
                 setVideos(videos.data)
-            } catch (err) {console.log("Error in channel.jsx while fetching user")}
+            } catch (err) {err}
         }
         fetchData();
     },[path])
