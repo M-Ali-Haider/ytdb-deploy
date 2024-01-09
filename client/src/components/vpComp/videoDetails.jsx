@@ -23,13 +23,22 @@ const VideoDetails=({channel})=>{
 
     const dotsContainerRef=useRef(null)
 
+    const yourJWTToken="bruhmiusmlao";
 
     const handleLike = async ()=>{
-        await axios.put(`https://ytdb-deploy.vercel.app/api/users/like/${currentVideo._id}`)
+        await axios.put(`https://ytdb-deploy.vercel.app/api/users/like/${currentVideo._id}`,{},{
+            headers: {
+                Authorization: `Bearer ${yourJWTToken}`,
+            },
+        })
         dispatch(like(currentUser._id))
     }
     const handleDislike = async ()=>{
-        await axios.put(`https://ytdb-deploy.vercel.app/api/users/dislike/${currentVideo._id}`)
+        await axios.put(`https://ytdb-deploy.vercel.app/api/users/dislike/${currentVideo._id}`,{},{
+            headers: {
+                Authorization: `Bearer ${yourJWTToken}`,
+            },
+        })
         dispatch(dislike(currentUser._id))
     }
 
