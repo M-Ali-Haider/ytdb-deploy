@@ -17,6 +17,8 @@ dotenv.config();
 const corsOptions = {
     origin: "https://youtubedb.vercel.app",
     credentials: true, 
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    optionsSuccessStatus: 204,
   };
 
 app.use(cors(corsOptions))
