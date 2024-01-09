@@ -31,7 +31,11 @@ export const signin = async (req, res, next) => {
     const {password, ...others} = user._doc;
 
     res.cookie("access_token",token,{
-        httpOnly:true
+        httpOnly:true,
+        domain:"https://ytdb-deploy.vercel.app",
+        path:'/',
+        secure:true,
+        sameSite:'None',
     }).status(200).json(others)
 
   } catch (err) {
@@ -47,6 +51,10 @@ export const googleAuth = async(req,res,next)=>{
       res
       .cookie("access_token",token,{
         httpOnly:true,
+        domain:"https://ytdb-deploy.vercel.app",
+        path:'/',
+        secure:true,
+        sameSite:'None',
       })
       .status(200)
       .json(user._doc)
@@ -61,6 +69,10 @@ export const googleAuth = async(req,res,next)=>{
       res
       .cookie("access_token",token,{
         httpOnly:true,
+        domain:"https://ytdb-deploy.vercel.app",
+        path:'/',
+        secure:true,
+        sameSite:'None',
       })
       .status(200)
       .json(savedUser)
