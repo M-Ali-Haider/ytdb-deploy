@@ -5,6 +5,7 @@ import subs from '../assets/images/subs.svg'
 import you from '../assets/images/you.svg'
 import browse from '../assets/images/browse.svg'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 const Footer=()=>{
     const {currentUser} = useSelector(state=>state.user)
     return(

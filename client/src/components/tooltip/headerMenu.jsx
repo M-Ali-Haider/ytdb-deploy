@@ -7,6 +7,7 @@ import pfp from "../../assets/images/pfp.webp"
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const HeaderMenu = ({currentUser,closeHM})=>{
 
