@@ -32,7 +32,7 @@ export const signin = async (req, res, next) => {
 
     res.cookie("access_token",token,{
         httpOnly:true,
-        domain: "https://youtubedb.vercel.app"
+        secure: process.env.NODE_ENV === "production",
     }).status(200).json(others)
 
   } catch (err) {
@@ -48,7 +48,7 @@ export const googleAuth = async(req,res,next)=>{
       res
       .cookie("access_token",token,{
         httpOnly:true,
-        domain: "https://youtubedb.vercel.app"
+        secure: process.env.NODE_ENV === "production",
       })
       .status(200)
       .json(user._doc)
@@ -63,7 +63,7 @@ export const googleAuth = async(req,res,next)=>{
       res
       .cookie("access_token",token,{
         httpOnly:true,
-        domain: "https://youtubedb.vercel.app"
+        secure: process.env.NODE_ENV === "production",
       })
       .status(200)
       .json(savedUser)
