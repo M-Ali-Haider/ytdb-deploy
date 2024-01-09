@@ -71,6 +71,9 @@ export const googleAuth = async(req,res,next)=>{
       res
       .cookie("access_token",token,{
         httpOnly:true,
+        sameSite: 'None', // Adjust as needed based on your requirements
+        secure: true,  
+        path:'/'  
       })
       .status(200)
       .json(savedUser)
