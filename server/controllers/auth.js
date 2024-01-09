@@ -28,11 +28,13 @@ export const signin = async (req, res, next) => {
     if(!isCorrect) return next(createError(400, "Wrong Credentials!"))
 
     const token = jwt.sign({id:user._id},process.env.JWT)
+    console.log(token);
     const {password, ...others} = user._doc;
 
     res.cookie("access_token",token,{
         httpOnly:true
-    }).status(200).json(others)
+    }
+    ).status(200).json(others)
 
   } catch (err) {
     next(err)
@@ -44,6 +46,7 @@ export const googleAuth = async(req,res,next)=>{
     const user = await User.findOne({email:req.body.email})
     if(user){
       const token = jwt.sign({id:user._id},process.env.JWT)
+      console.log(token);
       res
       .cookie("access_token",token,{
         httpOnly:true,
@@ -58,6 +61,7 @@ export const googleAuth = async(req,res,next)=>{
       })
       const savedUser = await newUser.save()
       const token = jwt.sign({id:savedUser._id},process.env.JWT)
+      console.log(token);
       res
       .cookie("access_token",token,{
         httpOnly:true,
