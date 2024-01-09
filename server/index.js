@@ -15,7 +15,7 @@ const app = express();
 dotenv.config();
 
 const corsOptions = {
-    origin: "https://ytdb-deploy-frontend.vercel.app",
+    origin: "https://youtubedb.vercel.app",
     credentials: true, 
   };
 
