@@ -36,7 +36,12 @@ const Channel = ({isSidebarOpen,resetSidebar})=>{
                 setUser(res.data)
                 const rese = await axios.get(`https://ytdb-deploy.vercel.app/api/videos/count/${path}`)
                 setTotalVideos(rese.data)
-                const videos = await axios.get(`https://ytdb-deploy.vercel.app/api/videos/getvideo/${path}`)
+                const authToken = "bruhmiusmlao";
+                const videos = await axios.get(`https://ytdb-deploy.vercel.app/api/videos/getvideo/${path}`,{
+                    headers:{
+                        Authorization:`Bearer ${authToken}`,
+                    },
+                })
                 setVideos(videos.data)
             } catch (err) {err}
         }
