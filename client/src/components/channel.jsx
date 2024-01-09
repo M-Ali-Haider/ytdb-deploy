@@ -36,7 +36,7 @@ const Channel = ({isSidebarOpen,resetSidebar})=>{
                 setUser(res.data)
                 const rese = await axios.get(`https://ytdb-deploy.vercel.app/api/videos/count/${path}`)
                 setTotalVideos(rese.data)
-                const videos = await axios.get(`https://ytdb-deploy.vercel.app/api/videos/getvideo/${path}`,{ withCredentials: true })
+                const videos = await axios.get(`https://ytdb-deploy.vercel.app/api/videos/getvideo/${path}`)
                 setVideos(videos.data)
             } catch (err) {err}
         }
