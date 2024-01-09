@@ -23,9 +23,15 @@ const VideoDetails=({channel})=>{
 
     const dotsContainerRef=useRef(null)
 
-
+    const yourAccessToken="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxZjk1NzA0OWU1OWNlODQzZTliZCIsImlhdCI6MTcwNDgxNTIwOX0.zYsPAF5upmrwu8ATxsWD-Mm5B28pZEySm5tw4qidzPo"
     const handleLike = async ()=>{
-        await axios.put(`https://ytdb-deploy.vercel.app/api/users/like/${currentVideo._id}`)
+        await axios.put(`https://ytdb-deploy.vercel.app/api/users/like/${currentVideo._id}`,
+        {},
+        {
+            headers: {
+                Authorization: `Bearer ${yourAccessToken}`,
+            },
+        })
         dispatch(like(currentUser._id))
     }
     const handleDislike = async ()=>{
